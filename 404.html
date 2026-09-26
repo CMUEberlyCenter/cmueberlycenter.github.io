@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Page not found</title>
+<script>
+  // Project sites renamed in this organization. Requests for an old path are
+  // sent to the same page under the new name.
+  var moved = {
+    "eberly-biolab-activity-acid-dissociation": "cmueberlycenter-biolab-activity-acid-dissociation",
+    "eberly-biolab-activity-strong-vs-weak-acid-dissociation": "cmueberlycenter-biolab-activity-strong-vs-weak-acid-dissociation",
+    "eberly-biolab-config": "cmueberlycenter-biolab-config",
+    "eberly-biolab-p5.beaker": "cmueberlycenter-biolab-p5.beaker",
+    "eberly-biolab-template": "cmueberlycenter-biolab-template"
+  };
+  var parts = location.pathname.split("/");
+  var target = moved[(parts[1] || "").toLowerCase()];
+  if (target) {
+    parts[1] = target;
+    location.replace(parts.join("/") + location.search + location.hash);
+  }
+</script>
+</head>
+<body>
+<p>Page not found. See the
+<a href="https://github.com/CMUEberlyCenter">CMUEberlyCenter</a> repositories.</p>
+</body>
+</html>
